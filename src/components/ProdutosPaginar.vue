@@ -1,5 +1,5 @@
 <template>
-  <ul v-if="paginasTotal > 1">
+  <ul class="center" v-if="paginasTotal > 1">
     <li v-for="pagina in paginas" :key="pagina">
       <router-link :to="{ query: query(pagina) }">{{ pagina }}</router-link>
     </li>
@@ -45,7 +45,7 @@ export default {
     },
     paginasTotal() {
       const total = this.produtosTotal / this.produtosPorPagina;
-      return total !== Infinity ? Math.ceil(total) : 0;
+      return total !== Infinity ? Math.ceil(total) : 1;
     },
   },
 };
@@ -54,6 +54,8 @@ export default {
 <style>
 ul {
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
 }
 
 li {
