@@ -3,6 +3,9 @@
     <label for="nome">Nome</label>
     <input id="nome" name="nome" v-model="nome" type="text" />
 
+    <label for="email">E-mail</label>
+    <input id="email" name="email" v-model="email" type="email" />
+
     <label for="senha">Senha</label>
     <input id="senha" name="senha" v-model="senha" type="password" />
 
@@ -31,7 +34,27 @@
 </template>
 
 <script>
-export default {};
+import { mapFields } from "@/helpers.js";
+
+export default {
+  computed: {
+    ...mapFields({
+      fields: [
+        "nome",
+        "email",
+        "senha",
+        "rua",
+        "cep",
+        "numero",
+        "bairro",
+        "cidade",
+        "estado",
+      ],
+      base: "usuario",
+      mutation: "UPDATE_USUARIO",
+    }),
+  },
+};
 </script>
 
 <style scoped>

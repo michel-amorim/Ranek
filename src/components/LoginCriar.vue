@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Crie sua Conta</h2>
+    <h2>Crie a Sua Conta</h2>
     <transition mode="out-in">
       <button v-if="!criar" class="btn" @click="criar = true">
         Criar Conta
@@ -14,6 +14,7 @@
 
 <script>
 import UsuarioForm from "@/components/UsuarioForm.vue";
+
 export default {
   name: "LoginCriar",
   components: {
@@ -24,10 +25,6 @@ export default {
       criar: false,
     };
   },
-
-  // methods: {
-  //   criar() {},
-  // },
 };
 </script>
 
@@ -37,12 +34,14 @@ h2 {
   margin-top: 40px;
   margin-bottom: 10px;
 }
+
 .btn {
   width: 100%;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .btn-form {
   max-width: 100%;
 }
